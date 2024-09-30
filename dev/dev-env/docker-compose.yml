@@ -1,0 +1,41 @@
+---
+version: '3'
+services:
+
+  # postgres-risks-fms-development-com:
+  #   image: postgres:12-alpine
+  #   ports:
+  #     - "5440:5432"
+  #   environment:
+  #     - POSTGRES_DB=postgres
+  #     - POSTGRES_USER=app
+  #     - POSTGRES_PASSWORD=app123
+  #     - TZ=Asia/Tbilisi
+  #   volumes:
+  #     - postgres-risks-fms-development-com:/var/lib/postgresql/data
+  #     - ./dumps/risks_fms/initial_database_com.sql:/docker-entrypoint-initdb.d/init1.sql
+  # postgres-risks-fms-development--am:
+  #   image: postgres:12-alpine
+  #   ports:
+  #     - "5441:5432"
+  #   environment:
+  #     - POSTGRES_DB=postgres
+  #     - POSTGRES_USER=app
+  #     - POSTGRES_PASSWORD=app123
+  #     - TZ=Asia/Tbilisi
+  #   volumes:
+  #     - postgres-risks-fms-development-am:/var/lib/postgresql/data
+  #     - ./dumps/risks_fms/initial_database_am.sql:/docker-entrypoint-initdb.d/init1.sql
+
+  redis-bet-mavrik:
+    image: redis:latest
+    container_name: redis-bet-mavrik
+    ports:
+      - "6399:6379"
+    volumes:
+      - redis-data:/data
+volumes:
+  # postgres-risks-fms-development-com:
+  # postgres-risks-fms-development-am:
+  redis-data:
+
